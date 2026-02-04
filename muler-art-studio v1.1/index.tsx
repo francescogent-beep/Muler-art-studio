@@ -13,10 +13,10 @@ import { SERVICES } from './data';
 import './index.css';
 
 const App = () => {
-  // Detect if we are in a preview environment or production
+  // Detect if we are in a preview/local environment or production
+  // HashRouter (#) is used in previews to ensure sub-routes work without server config
+  // BrowserRouter (/) is used in the final domain for clean URLs
   const isProduction = window.location.hostname === 'mulerartstudio.es' || window.location.hostname === 'www.mulerartstudio.es';
-  
-  // Use HashRouter for previews/local to avoid 404s on subpaths, BrowserRouter for clean URLs in prod
   const Router = isProduction ? BrowserRouter : HashRouter;
 
   return (
@@ -37,9 +37,9 @@ const App = () => {
           ))}
           
           {/* Páginas Legales */}
-          <Route path="/legal/privacidad" element={<div className="pt-40 px-6 max-w-2xl mx-auto min-h-screen text-center"><h1 className="font-serif text-3xl italic mb-8 text-white">Política de Privacidad</h1><p className="text-zinc-500 font-light">Tus datos están seguros. Cumplimos estrictamente con el RGPD.</p></div>} />
-          <Route path="/legal/cookies" element={<div className="pt-40 px-6 max-w-2xl mx-auto min-h-screen text-center"><h1 className="font-serif text-3xl italic mb-8 text-white">Política de Cookies</h1><p className="text-zinc-500 font-light">Utilizamos solo cookies técnicas para mejorar la experiencia de navegación.</p></div>} />
-          <Route path="/legal/aviso-legal" element={<div className="pt-40 px-6 max-w-2xl mx-auto min-h-screen text-center"><h1 className="font-serif text-3xl italic mb-8 text-white">Aviso Legal</h1><p className="text-zinc-500 font-light">MULER ART STUDIO - Av. Miguel de Cervantes, 9, Murcia.</p></div>} />
+          <Route path="/legal/privacidad" element={<div className="pt-40 px-6 max-w-2xl mx-auto min-h-screen text-center"><h1 className="font-serif text-3xl italic mb-8 text-white">Política de Privacidad</h1><p className="text-zinc-300 font-light">Tus datos están seguros. Cumplimos estrictamente con el RGPD.</p></div>} />
+          <Route path="/legal/cookies" element={<div className="pt-40 px-6 max-w-2xl mx-auto min-h-screen text-center"><h1 className="font-serif text-3xl italic mb-8 text-white">Política de Cookies</h1><p className="text-zinc-300 font-light">Utilizamos solo cookies técnicas para mejorar la experiencia de navegación.</p></div>} />
+          <Route path="/legal/aviso-legal" element={<div className="pt-40 px-6 max-w-2xl mx-auto min-h-screen text-center"><h1 className="font-serif text-3xl italic mb-8 text-white">Aviso Legal</h1><p className="text-zinc-300 font-light">MULER ART STUDIO - Av. Miguel de Cervantes, 9, Murcia.</p></div>} />
           
           {/* Redirección por defecto */}
           <Route path="*" element={<Navigate to="/" />} />
