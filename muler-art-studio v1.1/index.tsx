@@ -1,6 +1,6 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
-import { BrowserRouter, HashRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Layout from './components/Layout';
 import Home from './pages/Home';
 import Services from './pages/Services';
@@ -13,12 +13,6 @@ import { SERVICES } from './data';
 import './index.css';
 
 const App = () => {
-  // Detect if we are in a preview/local environment or production
-  // HashRouter (#) is used in previews to ensure sub-routes work without server config
-  // BrowserRouter (/) is used in the final domain for clean URLs
-  const isProduction = window.location.hostname === 'mulerartstudio.es' || window.location.hostname === 'www.mulerartstudio.es';
-  const Router = isProduction ? BrowserRouter : HashRouter;
-
   return (
     <Router>
       <Layout>
