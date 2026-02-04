@@ -96,8 +96,6 @@ export const IMAGES = {
     'https://i.imgur.com/ma8S5IS.jpeg',
     'https://i.imgur.com/iUhj5al.jpeg',
     'https://i.imgur.com/LdoHala.jpeg',
-    'https://i.imgur.com/OC4BdTu.jpeg',
-    'https://i.imgur.com/9mS8oGC.jpeg',
     'https://i.imgur.com/OdMwwWJ.jpeg'
   ]
 };
