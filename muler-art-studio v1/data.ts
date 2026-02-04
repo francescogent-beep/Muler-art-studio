@@ -102,7 +102,6 @@ export const IMAGES = {
     getAsset('/images/portfolio-2.webp', 'https://i.imgur.com/ma8S5IS.jpeg'),
     getAsset('/images/portfolio-3.webp', 'https://i.imgur.com/iUhj5al.jpeg'),
     getAsset('/images/portfolio-4.webp', 'https://i.imgur.com/LdoHala.jpeg'),
-    getAsset('/images/portfolio-6.webp', 'https://i.imgur.com/9mS8oGC.jpeg'),
     getAsset('/images/portfolio-7.webp', 'https://i.imgur.com/OdMwwWJ.jpeg')
   ]
 };
