@@ -1,9 +1,3 @@
-
-const IS_PROD = typeof window !== 'undefined' && 
-  (window.location.hostname === 'mulerartstudio.es' || window.location.hostname === 'www.mulerartstudio.es');
-
-const getAsset = (localPath: string, previewUrl: string) => IS_PROD ? localPath : previewUrl;
-
 export const CONTACT = {
   name: 'MULER ART STUDIO',
   legalName: 'Muler Art Studio S.L.',
@@ -56,7 +50,7 @@ export const SERVICES = [
     price: '15.00',
     duration: '30 min',
     keywords: ['corte pelo murcia', 'peluquería hombre murcia', 'mejor barbero murcia'],
-    image: getAsset('/images/service-corte-pelo.webp', 'https://i.imgur.com/hLxzN4x.jpeg')
+    image: 'https://i.imgur.com/hLxzN4x.jpeg'
   },
   {
     id: 'corte-barba',
@@ -67,7 +61,7 @@ export const SERVICES = [
     price: '20.00',
     duration: '45 min',
     keywords: ['corte y barba murcia', 'barbería completa murcia', 'diseño barba murcia'],
-    image: getAsset('/images/service-corte-barba.webp', 'https://i.imgur.com/ma8S5IS.jpeg')
+    image: 'https://i.imgur.com/ma8S5IS.jpeg'
   },
   {
     id: 'arreglo-barba',
@@ -78,7 +72,7 @@ export const SERVICES = [
     price: '8.00',
     duration: '20 min',
     keywords: ['arreglo barba murcia', 'perfilado barba murcia', 'barber shop murcia'],
-    image: getAsset('/images/service-arreglo-barba.webp', 'https://i.imgur.com/iUhj5al.jpeg')
+    image: 'https://i.imgur.com/iUhj5al.jpeg'
   },
   {
     id: 'diseno-cejas',
@@ -89,19 +83,19 @@ export const SERVICES = [
     price: '5.00',
     duration: '15 min',
     keywords: ['diseño cejas murcia', 'cejas hombre murcia', 'mirada masculina'],
-    image: getAsset('/images/service-diseno-cejas.webp', 'https://i.imgur.com/LdoHala.jpeg')
+    image: 'https://i.imgur.com/LdoHala.jpeg'
   }
 ];
 
 export const IMAGES = {
-  hero: getAsset('/images/hero.webp', 'https://i.imgur.com/OC4BdTu.jpeg'),
-  interior: getAsset('/images/interior.webp', 'https://i.imgur.com/9mS8oGC.jpeg'),
-  storefront: getAsset('/images/storefront.webp', 'https://i.imgur.com/OdMwwWJ.jpeg'),
+  hero: 'https://i.imgur.com/OC4BdTu.jpeg',
+  interior: 'https://i.imgur.com/9mS8oGC.jpeg',
+  storefront: 'https://i.imgur.com/OdMwwWJ.jpeg',
   portfolio: [
-    getAsset('/images/portfolio-1.webp', 'https://i.imgur.com/hLxzN4x.jpeg'),
-    getAsset('/images/portfolio-2.webp', 'https://i.imgur.com/ma8S5IS.jpeg'),
-    getAsset('/images/portfolio-3.webp', 'https://i.imgur.com/iUhj5al.jpeg'),
-    getAsset('/images/portfolio-4.webp', 'https://i.imgur.com/LdoHala.jpeg'),
-    getAsset('/images/portfolio-7.webp', 'https://i.imgur.com/OdMwwWJ.jpeg')
+    'https://i.imgur.com/hLxzN4x.jpeg',
+    'https://i.imgur.com/ma8S5IS.jpeg',
+    'https://i.imgur.com/iUhj5al.jpeg',
+    'https://i.imgur.com/LdoHala.jpeg',
+    'https://i.imgur.com/OdMwwWJ.jpeg'
   ]
 };
