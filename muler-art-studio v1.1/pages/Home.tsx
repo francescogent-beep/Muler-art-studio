@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Scissors, Star, ShieldCheck, MapPin, ArrowRight, ChevronDown } from 'lucide-react';
+import { Star, MapPin, ArrowRight, ChevronDown } from 'lucide-react';
 import SEO from '../components/SEO';
 import { CONTACT, IMAGES, SERVICES, FAQS } from '../data';
 
@@ -62,7 +62,7 @@ export default function Home() {
         
         <div className="relative z-30 text-center px-6 max-w-[1400px]">
           <div className="overflow-hidden mb-10">
-            <span className="block uppercase tracking-header text-[10px] text-zinc-200 font-black animate-reveal [animation-delay:300ms]">
+            <span className="block uppercase tracking-header text-[10px] text-zinc-100 font-black animate-reveal [animation-delay:300ms]">
               Peluquería Murcia
             </span>
           </div>
@@ -73,7 +73,7 @@ export default function Home() {
           </h1>
 
           <div className="overflow-hidden mb-16 animate-reveal [animation-delay:650ms]">
-            <p className="text-zinc-200 text-lg md:text-2xl font-light tracking-wide max-w-2xl mx-auto leading-relaxed">
+            <p className="text-zinc-100 text-lg md:text-2xl font-light tracking-wide max-w-2xl mx-auto leading-relaxed">
               No vienes a cortarte el pelo. <br className="md:hidden" /> Vienes a verte mejor.
             </p>
           </div>
@@ -82,7 +82,7 @@ export default function Home() {
             <Link to="/reservar" className="w-full md:w-auto neon-border bg-white/5 backdrop-blur-md px-20 py-6 text-[11px] uppercase tracking-premium font-black text-white hover:bg-white hover:text-black transition-all duration-1000 rounded-full">
               RESERVAR CITA
             </Link>
-            <Link to="/servicios" className="w-full md:w-auto text-zinc-200 hover:text-white text-[11px] uppercase tracking-premium font-black transition-all">
+            <Link to="/servicios" className="w-full md:w-auto text-zinc-100 hover:text-white text-[11px] uppercase tracking-premium font-black transition-all">
               VER SERVICIOS
             </Link>
           </div>
@@ -123,7 +123,7 @@ export default function Home() {
               <span className="text-zinc-300 uppercase tracking-header text-[10px] font-black block mb-8">Nuestra Carta</span>
               <h2 className="text-7xl md:text-9xl font-serif italic text-white leading-none">Servicios</h2>
             </div>
-            <Link to="/servicios" className="text-[11px] uppercase tracking-premium font-black text-zinc-300 hover:text-white transition-all mb-4">
+            <Link to="/servicios" className="text-[11px] uppercase tracking-premium font-black text-zinc-200 hover:text-white transition-all mb-4">
               EXPLORAR TODO EL MENÚ <ArrowRight size={16} className="inline ml-3"/>
             </Link>
           </div>
@@ -143,9 +143,9 @@ export default function Home() {
                   <div className="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent opacity-80 group-hover:opacity-40 transition-opacity duration-1000"></div>
                 </div>
                 <div className="relative z-10">
-                  <span className="absolute -top-48 right-0 text-[10px] text-zinc-200 font-serif group-hover:text-white transition-all duration-700">0{idx + 1}</span>
+                  <span className="absolute -top-48 right-0 text-[10px] text-zinc-100 font-serif group-hover:text-white transition-all duration-700">0{idx + 1}</span>
                   <h3 className="text-4xl font-serif italic mb-6 group-hover:-translate-y-2 transition-transform duration-700 text-white leading-tight">{s.title}</h3>
-                  <p className="text-[10px] uppercase tracking-[0.4em] text-zinc-100 opacity-0 group-hover:opacity-100 transition-all duration-700 font-bold">MÁS DETALLES</p>
+                  <p className="text-[10px] uppercase tracking-[0.4em] text-white opacity-0 group-hover:opacity-100 transition-all duration-700 font-bold uppercase">MÁS DETALLES</p>
                 </div>
               </Link>
             ))}
@@ -163,9 +163,9 @@ export default function Home() {
             <div className="lg:col-span-5">
               <span className="text-zinc-300 uppercase tracking-header text-[10px] font-black block mb-12">Filosofía Muler</span>
               <h2 className="text-6xl md:text-8xl font-serif italic mb-16 leading-[0.9] text-white">
-                Donde la técnica se encuentra con el <span className="text-zinc-400">bienestar.</span>
+                Donde la técnica se encuentra con el <span className="text-zinc-300">bienestar.</span>
               </h2>
-              <p className="text-zinc-200 font-light text-xl leading-relaxed max-w-md tracking-wide">
+              <p className="text-zinc-100 font-light text-xl leading-relaxed max-w-md tracking-wide">
                 No solo cortamos el cabello; diseñamos una identidad. Cada ritual en Muler Art Studio está concebido para ofrecer precisión técnica en un entorno de calma absoluta.
               </p>
             </div>
@@ -178,8 +178,8 @@ export default function Home() {
                 { n: '04', t: 'Espacio', d: 'Un estudio moderno en el corazón de Murcia que redefine la barbería clásica.', link: '/galeria' }
               ].map((item) => (
                 <Link to={item.link} key={item.n} className="border-l border-white/10 pl-12 py-6 group hover:border-white/40 transition-all duration-1000 block">
-                  <h3 className="text-[11px] uppercase tracking-[0.5em] text-zinc-200 mb-8 group-hover:text-white transition-colors font-bold">{item.n}. {item.t}</h3>
-                  <p className="text-base text-zinc-300 font-light leading-relaxed group-hover:text-white">{item.d}</p>
+                  <h3 className="text-[11px] uppercase tracking-[0.5em] text-zinc-100 mb-8 group-hover:text-white transition-colors font-bold uppercase">{item.n}. {item.t}</h3>
+                  <p className="text-base text-zinc-200 font-light leading-relaxed group-hover:text-white">{item.d}</p>
                 </Link>
               ))}
             </div>
@@ -197,9 +197,9 @@ export default function Home() {
           style={{ backgroundImage: `url(${IMAGES.interior})` }}
         ></div>
         <div className="relative z-10 text-center px-6">
-            <span className="text-white uppercase tracking-[0.8em] text-[10px] font-black block mb-10 opacity-80">The Studio</span>
+            <span className="text-white uppercase tracking-[0.8em] text-[10px] font-black block mb-10 opacity-100">The Studio</span>
             <h2 className="text-7xl md:text-9xl font-serif italic mb-16 text-white leading-none">Un espacio de autor</h2>
-            <Link to="/galeria" className="inline-block border-b border-white/40 pb-4 text-[11px] uppercase tracking-premium font-black text-white hover:text-zinc-100 hover:border-white transition-all duration-700">
+            <Link to="/galeria" className="inline-block border-b border-white/40 pb-4 text-[11px] uppercase tracking-premium font-black text-white hover:text-white hover:border-white transition-all duration-700 uppercase">
                 VER GALERÍA COMPLETA
             </Link>
         </div>
@@ -208,13 +208,13 @@ export default function Home() {
       {/* FAQ Section */}
       <section className="py-32 px-8 md:px-16 bg-black border-t border-white/5">
         <div className="max-w-4xl mx-auto">
-          <span className="text-zinc-300 uppercase tracking-header text-[10px] font-black block mb-8 text-center">Preguntas Frecuentes</span>
-          <h2 className="text-4xl md:text-6xl font-serif italic text-white mb-16 text-center leading-tight">Dudas comunes <br/>sobre <span className="text-zinc-400 not-italic">Muler Art Studio</span></h2>
+          <span className="text-zinc-300 uppercase tracking-header text-[10px] font-black block mb-8 text-center uppercase">Preguntas Frecuentes</span>
+          <h2 className="text-4xl md:text-6xl font-serif italic text-white mb-16 text-center leading-tight">Dudas comunes <br/>sobre <span className="text-zinc-200 not-italic">Muler Art Studio</span></h2>
           <div className="space-y-12">
             {FAQS.map((faq, i) => (
               <div key={i} className="border-b border-white/10 pb-8">
                 <h3 className="text-xl text-white font-medium mb-4">{faq.question}</h3>
-                <p className="text-zinc-300 font-light leading-relaxed">{faq.answer}</p>
+                <p className="text-zinc-200 font-light leading-relaxed">{faq.answer}</p>
               </div>
             ))}
           </div>
@@ -226,27 +226,27 @@ export default function Home() {
         <div className="max-w-[1600px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
           <div className="relative text-center lg:text-left">
             <div 
-              className="absolute -top-32 left-1/2 -translate-x-1/2 lg:left-0 lg:translate-x-0 text-[18vw] lg:text-[12vw] font-serif italic text-white/[0.25] whitespace-nowrap pointer-events-none select-none" 
+              className="absolute -top-32 left-1/2 -translate-x-1/2 lg:left-0 lg:translate-x-0 text-[18vw] lg:text-[12vw] font-serif italic text-white/[0.35] whitespace-nowrap pointer-events-none select-none" 
               aria-hidden="true"
             >
               MURCIA STUDIO
             </div>
             
-            <MapPin className="mx-auto lg:ml-0 mb-14 text-zinc-100" size={50} strokeWidth={1}/>
+            <MapPin className="mx-auto lg:ml-0 mb-14 text-white" size={50} strokeWidth={1}/>
             <h3 className="text-5xl md:text-7xl font-serif mb-10 italic text-white leading-tight">
               {CONTACT.address}
             </h3>
-            <p className="text-zinc-200 uppercase tracking-header text-[10px] font-black mb-20">
+            <p className="text-zinc-100 uppercase tracking-header text-[10px] font-black mb-20 uppercase">
               Distrito {CONTACT.postalCode} • Murcia Centro
             </p>
             
             <div className="flex flex-col md:flex-row justify-center lg:justify-start gap-12 md:gap-24">
               {CONTACT.schedule.slice(0, 2).map((s, i) => (
                 <div key={i} className="text-center lg:text-left group">
-                  <span className="block text-[11px] uppercase tracking-premium text-zinc-200 mb-6 group-hover:text-white transition-all font-bold">
+                  <span className="block text-[11px] uppercase tracking-premium text-zinc-100 mb-6 group-hover:text-white transition-all font-bold uppercase">
                     {s.day}
                   </span>
-                  <span className="text-lg font-light text-zinc-100 tracking-widest">
+                  <span className="text-lg font-light text-white tracking-widest">
                     {s.hours}
                   </span>
                 </div>
@@ -254,10 +254,10 @@ export default function Home() {
             </div>
             
             <div className="mt-16 flex flex-col md:flex-row gap-8 justify-center lg:justify-start">
-                <Link to="/reservar" className="text-[10px] uppercase tracking-premium font-bold text-white border border-white/30 px-10 py-4 rounded-full hover:bg-white hover:text-black transition-all">
+                <Link to="/reservar" className="text-[10px] uppercase tracking-premium font-bold text-white border border-white/30 px-10 py-4 rounded-full hover:bg-white hover:text-black transition-all uppercase">
                   Reservar Ahora
                 </Link>
-                <Link to="/contacto" className="text-[10px] uppercase tracking-premium font-bold text-zinc-300 py-4 hover:text-white transition-all">
+                <Link to="/contacto" className="text-[10px] uppercase tracking-premium font-bold text-zinc-200 py-4 hover:text-white transition-all uppercase">
                   Ver Detalles de Contacto
                 </Link>
             </div>
