@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Instagram, Phone, MessageCircle, MapPin, ChevronDown, Plus, Minus } from 'lucide-react';
@@ -9,14 +8,12 @@ const Header = () => {
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
 
-  // Scroll visibility logic
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Body scroll lock logic - Fixes the "background scrolling" bug
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = 'hidden';
@@ -28,7 +25,6 @@ const Header = () => {
     };
   }, [isOpen]);
 
-  // Close menu on route change
   useEffect(() => {
     setIsOpen(false);
   }, [location.pathname]);
@@ -76,7 +72,6 @@ const Header = () => {
         </div>
       </header>
 
-      {/* Fullscreen Mobile Nav Overlay */}
       <div 
         className={`fixed inset-0 bg-black/95 backdrop-blur-2xl z-[105] flex flex-col items-center justify-center transition-all duration-700 ease-[cubic-bezier(0.19,1,0.22,1)] ${isOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-full pointer-events-none'}`}
       >
@@ -85,7 +80,7 @@ const Header = () => {
             <Link 
               key={l.path} 
               to={l.path} 
-              className={`text-4xl md:text-5xl font-serif italic transition-all duration-500 hover:text-zinc-400 ${location.pathname === l.path ? 'text-white' : 'text-zinc-500'}`}
+              className={`text-4xl md:text-5xl font-serif italic transition-all duration-500 hover:text-zinc-300 ${location.pathname === l.path ? 'text-white' : 'text-zinc-400'}`}
               style={{ 
                 transitionDelay: isOpen ? `${i * 70}ms` : '0ms',
                 transform: isOpen ? 'translateY(0)' : 'translateY(20px)',
@@ -133,12 +128,12 @@ const FooterSection = ({ title, children, defaultOpen = false, canToggle = false
       >
         <h3 className="text-[10px] uppercase tracking-[0.5em] text-white font-bold">{title}</h3>
         {canToggle && (
-          <div className="text-zinc-500 group-hover:text-white transition-colors">
+          <div className="text-zinc-400 group-hover:text-white transition-colors">
             {isOpen ? <Minus size={12} /> : <Plus size={12} />}
           </div>
         )}
       </div>
-      <div className={`flex flex-col gap-3 text-xs text-zinc-400 font-light overflow-hidden transition-all duration-500 ${isOpen ? 'max-h-[500px] opacity-100 mb-8' : 'max-h-0 opacity-0 mb-0'}`}>
+      <div className={`flex flex-col gap-3 text-xs text-zinc-300 font-light overflow-hidden transition-all duration-500 ${isOpen ? 'max-h-[500px] opacity-100 mb-8' : 'max-h-0 opacity-0 mb-0'}`}>
         {children}
       </div>
     </div>
@@ -150,8 +145,8 @@ const Footer = () => {
     <footer className="bg-black pt-32 pb-16 border-t border-white/10">
       <div className="max-w-[1800px] mx-auto px-8 md:px-16 grid grid-cols-1 md:grid-cols-12 gap-20">
         <div className="md:col-span-4">
-          <h2 className="font-logo text-5xl mb-10 italic text-white leading-tight">Muler Art <br/><span className="not-italic text-zinc-300 font-light">Studio.</span></h2>
-          <p className="text-zinc-400 max-w-sm text-sm leading-relaxed font-light mb-12 italic">
+          <h2 className="font-logo text-5xl mb-10 italic text-white leading-tight">Muler Art <br/><span className="not-italic text-zinc-200 font-light">Studio.</span></h2>
+          <p className="text-zinc-300 max-w-sm text-sm leading-relaxed font-light mb-12 italic">
             "Un santuario dedicado a la estética masculina donde el arte y la precisión convergen para redefinir el estilo personal en el corazón de Murcia."
           </p>
           <div className="flex gap-10">
@@ -171,9 +166,9 @@ const Footer = () => {
               <div className="flex items-center justify-between group">
                 <Link to="/servicios" className="hover:text-white transition-colors">Servicios</Link>
               </div>
-              <div className="flex flex-col gap-2 pl-4 border-l border-white/5 py-1">
+              <div className="flex flex-col gap-2 pl-4 border-l border-white/10 py-1">
                 {SERVICES.map(s => (
-                  <Link key={s.id} to={`/${s.slug}`} className="text-[10px] text-zinc-400 hover:text-white transition-colors uppercase tracking-widest">
+                  <Link key={s.id} to={`/${s.slug}`} className="text-[10px] text-zinc-300 hover:text-white transition-colors uppercase tracking-widest">
                     {s.title}
                   </Link>
                 ))}
@@ -185,11 +180,11 @@ const Footer = () => {
             <Link to="/reservar" className="hover:text-white transition-colors font-bold text-white/80">Reservar Cita</Link>
             
             <div className="flex flex-col gap-2 mt-6">
-              <span className="text-[9px] uppercase tracking-[0.3em] text-zinc-500 font-bold">Información Legal</span>
-              <div className="flex flex-col gap-2 pl-4 border-l border-white/5 py-1">
-                <Link to="/legal/aviso-legal" className="text-[10px] text-zinc-400 hover:text-white transition-colors">Aviso Legal</Link>
-                <Link to="/legal/privacidad" className="text-[10px] text-zinc-400 hover:text-white transition-colors">Privacidad</Link>
-                <Link to="/legal/cookies" className="text-[10px] text-zinc-400 hover:text-white transition-colors">Cookies</Link>
+              <span className="text-[9px] uppercase tracking-[0.3em] text-zinc-400 font-bold">Información Legal</span>
+              <div className="flex flex-col gap-2 pl-4 border-l border-white/10 py-1">
+                <Link to="/legal/aviso-legal" className="text-[10px] text-zinc-300 hover:text-white transition-colors">Aviso Legal</Link>
+                <Link to="/legal/privacidad" className="text-[10px] text-zinc-300 hover:text-white transition-colors">Privacidad</Link>
+                <Link to="/legal/cookies" className="text-[10px] text-zinc-300 hover:text-white transition-colors">Cookies</Link>
               </div>
             </div>
           </FooterSection>
@@ -198,26 +193,26 @@ const Footer = () => {
         <div className="md:col-span-4 flex flex-col gap-10">
           <div>
             <h3 className="text-[10px] uppercase tracking-[0.5em] text-white font-bold mb-8">Ubicación & Contacto</h3>
-            <div className="flex flex-col gap-8 text-xs text-zinc-400 font-light leading-relaxed">
+            <div className="flex flex-col gap-8 text-xs text-zinc-300 font-light leading-relaxed">
               <div className="flex items-start gap-4">
-                <MapPin size={18} className="mt-1 text-zinc-500 shrink-0" strokeWidth={1.5}/>
+                <MapPin size={18} className="mt-1 text-zinc-400 shrink-0" strokeWidth={1.5}/>
                 <p>
                   <span className="text-white block font-medium mb-1">{CONTACT.address}</span>
                   {CONTACT.postalCode} Murcia, España
                 </p>
               </div>
               <div className="flex items-center gap-4">
-                <Phone size={18} className="text-zinc-500 shrink-0" strokeWidth={1.5}/>
+                <Phone size={18} className="text-zinc-400 shrink-0" strokeWidth={1.5}/>
                 <p className="text-white font-medium">{CONTACT.phone}</p>
               </div>
               
-              <div className="pt-8 border-t border-white/5">
-                <h4 className="text-[9px] uppercase tracking-[0.4em] text-zinc-500 font-bold mb-4">Horario de Apertura</h4>
+              <div className="pt-8 border-t border-white/10">
+                <h4 className="text-[9px] uppercase tracking-[0.4em] text-zinc-400 font-bold mb-4">Horario de Apertura</h4>
                 <div className="space-y-2">
                   {CONTACT.schedule.map((s, i) => (
                     <div key={i} className="flex justify-between text-[11px]">
-                      <span className="text-zinc-500">{s.day}</span>
-                      <span className="text-zinc-400 font-medium">{s.hours}</span>
+                      <span className="text-zinc-400">{s.day}</span>
+                      <span className="text-zinc-200 font-medium">{s.hours}</span>
                     </div>
                   ))}
                 </div>
@@ -227,22 +222,22 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="max-w-[1800px] mx-auto px-8 md:px-16 mt-24 pt-12 border-t border-white/10 flex flex-col items-center gap-8 text-[9px] text-zinc-500 uppercase tracking-[0.5em] font-bold">
+      <div className="max-w-[1800px] mx-auto px-8 md:px-16 mt-24 pt-12 border-t border-white/10 flex flex-col items-center gap-8 text-[9px] text-zinc-400 uppercase tracking-[0.5em] font-bold">
         <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
           <div className="flex gap-10">
-            <span className="text-zinc-500">Diseño & Técnica de Autor</span>
-            <span className="text-zinc-500">Hecho en Murcia</span>
+            <span className="text-zinc-400">Diseño & Técnica de Autor</span>
+            <span className="text-zinc-400">Hecho en Murcia</span>
           </div>
           <a 
             href="https://fgdigitalsystems.com" 
             target="_blank" 
             rel="noopener noreferrer" 
-            className="text-zinc-400 hover:text-white transition-colors duration-500 md:border-l md:border-white/5 md:pl-12"
+            className="text-zinc-300 hover:text-white transition-colors duration-500 md:border-l md:border-white/10 md:pl-12"
           >
-            disegno web by <span className="text-zinc-400">FGDIGITALSYSTEMS</span>
+            disegno web by <span className="text-zinc-300">FGDIGITALSYSTEMS</span>
           </a>
         </div>
-        <span className="text-zinc-500 opacity-60 pt-4 border-t border-white/5 w-full text-center">
+        <span className="text-zinc-400 pt-4 border-t border-white/10 w-full text-center">
           MULER ART STUDIO — MURCIA © {new Date().getFullYear()}
         </span>
       </div>
