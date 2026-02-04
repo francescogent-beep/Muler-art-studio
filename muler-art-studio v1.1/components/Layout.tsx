@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Instagram, Phone, MessageCircle, MapPin, ChevronDown, Plus, Minus } from 'lucide-react';
+import { Menu, X, Instagram, Phone, MessageCircle, MapPin, Plus, Minus } from 'lucide-react';
 import { CONTACT, SERVICES } from '../data';
 
 const Header = () => {
@@ -80,7 +80,7 @@ const Header = () => {
             <Link 
               key={l.path} 
               to={l.path} 
-              className={`text-4xl md:text-5xl font-serif italic transition-all duration-500 hover:text-zinc-300 ${location.pathname === l.path ? 'text-white' : 'text-zinc-400'}`}
+              className={`text-4xl md:text-5xl font-serif italic transition-all duration-500 hover:text-zinc-200 ${location.pathname === l.path ? 'text-white' : 'text-zinc-400'}`}
               style={{ 
                 transitionDelay: isOpen ? `${i * 70}ms` : '0ms',
                 transform: isOpen ? 'translateY(0)' : 'translateY(20px)',
@@ -180,7 +180,7 @@ const Footer = () => {
             <Link to="/reservar" className="hover:text-white transition-colors font-bold text-white/80">Reservar Cita</Link>
             
             <div className="flex flex-col gap-2 mt-6">
-              <span className="text-[9px] uppercase tracking-[0.3em] text-zinc-400 font-bold">Información Legal</span>
+              <span className="text-[9px] uppercase tracking-[0.3em] text-zinc-400 font-bold uppercase">Información Legal</span>
               <div className="flex flex-col gap-2 pl-4 border-l border-white/10 py-1">
                 <Link to="/legal/aviso-legal" className="text-[10px] text-zinc-300 hover:text-white transition-colors">Aviso Legal</Link>
                 <Link to="/legal/privacidad" className="text-[10px] text-zinc-300 hover:text-white transition-colors">Privacidad</Link>
@@ -192,27 +192,27 @@ const Footer = () => {
 
         <div className="md:col-span-4 flex flex-col gap-10">
           <div>
-            <h3 className="text-[10px] uppercase tracking-[0.5em] text-white font-bold mb-8">Ubicación & Contacto</h3>
+            <h3 className="text-[10px] uppercase tracking-[0.5em] text-white font-bold mb-8 uppercase">Ubicación & Contacto</h3>
             <div className="flex flex-col gap-8 text-xs text-zinc-300 font-light leading-relaxed">
               <div className="flex items-start gap-4">
-                <MapPin size={18} className="mt-1 text-zinc-400 shrink-0" strokeWidth={1.5}/>
+                <MapPin size={18} className="mt-1 text-zinc-300 shrink-0" strokeWidth={1.5}/>
                 <p>
                   <span className="text-white block font-medium mb-1">{CONTACT.address}</span>
                   {CONTACT.postalCode} Murcia, España
                 </p>
               </div>
               <div className="flex items-center gap-4">
-                <Phone size={18} className="text-zinc-400 shrink-0" strokeWidth={1.5}/>
+                <Phone size={18} className="text-zinc-300 shrink-0" strokeWidth={1.5}/>
                 <p className="text-white font-medium">{CONTACT.phone}</p>
               </div>
               
               <div className="pt-8 border-t border-white/10">
-                <h4 className="text-[9px] uppercase tracking-[0.4em] text-zinc-400 font-bold mb-4">Horario de Apertura</h4>
+                <h4 className="text-[9px] uppercase tracking-[0.4em] text-zinc-400 font-bold mb-4 uppercase">Horario de Apertura</h4>
                 <div className="space-y-2">
                   {CONTACT.schedule.map((s, i) => (
                     <div key={i} className="flex justify-between text-[11px]">
-                      <span className="text-zinc-400">{s.day}</span>
-                      <span className="text-zinc-200 font-medium">{s.hours}</span>
+                      <span className="text-zinc-300 font-medium uppercase">{s.day}</span>
+                      <span className="text-white font-medium">{s.hours}</span>
                     </div>
                   ))}
                 </div>
@@ -225,8 +225,8 @@ const Footer = () => {
       <div className="max-w-[1800px] mx-auto px-8 md:px-16 mt-24 pt-12 border-t border-white/10 flex flex-col items-center gap-8 text-[9px] text-zinc-400 uppercase tracking-[0.5em] font-bold">
         <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
           <div className="flex gap-10">
-            <span className="text-zinc-400">Diseño & Técnica de Autor</span>
-            <span className="text-zinc-400">Hecho en Murcia</span>
+            <span className="text-zinc-300 uppercase">Diseño & Técnica de Autor</span>
+            <span className="text-zinc-300 uppercase">Hecho en Murcia</span>
           </div>
           <a 
             href="https://fgdigitalsystems.com" 
@@ -237,7 +237,7 @@ const Footer = () => {
             disegno web by <span className="text-zinc-300">FGDIGITALSYSTEMS</span>
           </a>
         </div>
-        <span className="text-zinc-400 pt-4 border-t border-white/10 w-full text-center">
+        <span className="text-zinc-300 pt-4 border-t border-white/5 w-full text-center uppercase tracking-widest">
           MULER ART STUDIO — MURCIA © {new Date().getFullYear()}
         </span>
       </div>
