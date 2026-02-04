@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Scissors, Star, ShieldCheck, MapPin, ArrowRight, ChevronDown } from 'lucide-react';
@@ -14,7 +13,7 @@ const REVIEWS = [
 ];
 
 const GoogleIcon = () => (
-  <svg viewBox="0 0 24 24" width="18" height="18" className="shrink-0">
+  <svg viewBox="0 0 24 24" width="18" height="18" className="shrink-0" role="img" aria-label="Google">
     <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
     <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
     <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
@@ -63,18 +62,18 @@ export default function Home() {
         
         <div className="relative z-30 text-center px-6 max-w-[1400px]">
           <div className="overflow-hidden mb-10">
-            <span className="block uppercase tracking-header text-[10px] text-zinc-300 font-black animate-reveal [animation-delay:300ms]">
+            <span className="block uppercase tracking-header text-[10px] text-zinc-200 font-black animate-reveal [animation-delay:300ms]">
               Peluquería Murcia
             </span>
           </div>
           
           <h1 className="text-5xl md:text-[8vw] font-serif leading-[0.9] mb-8 animate-reveal [animation-delay:500ms] text-white">
             BARBERÍA DE <br /> 
-            <span className="italic font-light text-zinc-200 text-[0.85em]">AUTOR EN MURCIA</span>
+            <span className="italic font-light text-zinc-100 text-[0.85em]">AUTOR EN MURCIA</span>
           </h1>
 
           <div className="overflow-hidden mb-16 animate-reveal [animation-delay:650ms]">
-            <p className="text-zinc-300 text-lg md:text-2xl font-light tracking-wide max-w-2xl mx-auto leading-relaxed">
+            <p className="text-zinc-200 text-lg md:text-2xl font-light tracking-wide max-w-2xl mx-auto leading-relaxed">
               No vienes a cortarte el pelo. <br className="md:hidden" /> Vienes a verte mejor.
             </p>
           </div>
@@ -83,13 +82,13 @@ export default function Home() {
             <Link to="/reservar" className="w-full md:w-auto neon-border bg-white/5 backdrop-blur-md px-20 py-6 text-[11px] uppercase tracking-premium font-black text-white hover:bg-white hover:text-black transition-all duration-1000 rounded-full">
               RESERVAR CITA
             </Link>
-            <Link to="/servicios" className="w-full md:w-auto text-zinc-300 hover:text-white text-[11px] uppercase tracking-premium font-black transition-all">
+            <Link to="/servicios" className="w-full md:w-auto text-zinc-200 hover:text-white text-[11px] uppercase tracking-premium font-black transition-all">
               VER SERVICIOS
             </Link>
           </div>
         </div>
 
-        <div className="absolute bottom-12 left-1/2 -translate-x-1/2 animate-bounce opacity-20 z-30">
+        <div className="absolute bottom-12 left-1/2 -translate-x-1/2 animate-bounce opacity-40 z-30">
           <ChevronDown size={30} strokeWidth={1} className="text-white" />
         </div>
       </section>
@@ -106,7 +105,7 @@ export default function Home() {
                     <Star key={j} size={12} fill="#FBBC05" className="text-[#FBBC05]" />
                   ))}
                 </div>
-                <span className="text-[10px] font-black uppercase tracking-widest text-black/40 ml-2">Google Reviews</span>
+                <span className="text-[10px] font-black uppercase tracking-widest text-black/60 ml-2">Google Reviews</span>
               </div>
               <span className="text-xl md:text-2xl font-serif italic text-black whitespace-nowrap">
                 {review}
@@ -144,9 +143,9 @@ export default function Home() {
                   <div className="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent opacity-80 group-hover:opacity-40 transition-opacity duration-1000"></div>
                 </div>
                 <div className="relative z-10">
-                  <span className="absolute -top-48 right-0 text-[10px] text-zinc-300 font-serif group-hover:text-white transition-all duration-700">0{idx + 1}</span>
+                  <span className="absolute -top-48 right-0 text-[10px] text-zinc-200 font-serif group-hover:text-white transition-all duration-700">0{idx + 1}</span>
                   <h3 className="text-4xl font-serif italic mb-6 group-hover:-translate-y-2 transition-transform duration-700 text-white leading-tight">{s.title}</h3>
-                  <p className="text-[10px] uppercase tracking-[0.4em] text-zinc-300 opacity-0 group-hover:opacity-100 transition-all duration-700 font-bold">MÁS DETALLES</p>
+                  <p className="text-[10px] uppercase tracking-[0.4em] text-zinc-100 opacity-0 group-hover:opacity-100 transition-all duration-700 font-bold">MÁS DETALLES</p>
                 </div>
               </Link>
             ))}
@@ -166,7 +165,7 @@ export default function Home() {
               <h2 className="text-6xl md:text-8xl font-serif italic mb-16 leading-[0.9] text-white">
                 Donde la técnica se encuentra con el <span className="text-zinc-400">bienestar.</span>
               </h2>
-              <p className="text-zinc-300 font-light text-xl leading-relaxed max-w-md tracking-wide">
+              <p className="text-zinc-200 font-light text-xl leading-relaxed max-w-md tracking-wide">
                 No solo cortamos el cabello; diseñamos una identidad. Cada ritual en Muler Art Studio está concebido para ofrecer precisión técnica en un entorno de calma absoluta.
               </p>
             </div>
@@ -178,8 +177,8 @@ export default function Home() {
                 { n: '03', t: 'Ritual', d: 'Toallas calientes, masajes capilares y un ambiente diseñado para desconectar.', link: '/reservar' },
                 { n: '04', t: 'Espacio', d: 'Un estudio moderno en el corazón de Murcia que redefine la barbería clásica.', link: '/galeria' }
               ].map((item) => (
-                <Link to={item.link} key={item.n} className="border-l border-white/5 pl-12 py-6 group hover:border-white/30 transition-all duration-1000 block">
-                  <h3 className="text-[11px] uppercase tracking-[0.5em] text-zinc-300 mb-8 group-hover:text-white transition-colors font-bold">{item.n}. {item.t}</h3>
+                <Link to={item.link} key={item.n} className="border-l border-white/10 pl-12 py-6 group hover:border-white/40 transition-all duration-1000 block">
+                  <h3 className="text-[11px] uppercase tracking-[0.5em] text-zinc-200 mb-8 group-hover:text-white transition-colors font-bold">{item.n}. {item.t}</h3>
                   <p className="text-base text-zinc-300 font-light leading-relaxed group-hover:text-white">{item.d}</p>
                 </Link>
               ))}
@@ -198,9 +197,9 @@ export default function Home() {
           style={{ backgroundImage: `url(${IMAGES.interior})` }}
         ></div>
         <div className="relative z-10 text-center px-6">
-            <span className="text-white uppercase tracking-[0.8em] text-[10px] font-black block mb-10 opacity-60">The Studio</span>
+            <span className="text-white uppercase tracking-[0.8em] text-[10px] font-black block mb-10 opacity-80">The Studio</span>
             <h2 className="text-7xl md:text-9xl font-serif italic mb-16 text-white leading-none">Un espacio de autor</h2>
-            <Link to="/galeria" className="inline-block border-b border-white/20 pb-4 text-[11px] uppercase tracking-premium font-black text-white hover:text-zinc-200 hover:border-white transition-all duration-700">
+            <Link to="/galeria" className="inline-block border-b border-white/40 pb-4 text-[11px] uppercase tracking-premium font-black text-white hover:text-zinc-100 hover:border-white transition-all duration-700">
                 VER GALERÍA COMPLETA
             </Link>
         </div>
@@ -215,7 +214,7 @@ export default function Home() {
             {FAQS.map((faq, i) => (
               <div key={i} className="border-b border-white/10 pb-8">
                 <h3 className="text-xl text-white font-medium mb-4">{faq.question}</h3>
-                <p className="text-zinc-400 font-light leading-relaxed">{faq.answer}</p>
+                <p className="text-zinc-300 font-light leading-relaxed">{faq.answer}</p>
               </div>
             ))}
           </div>
@@ -227,27 +226,27 @@ export default function Home() {
         <div className="max-w-[1600px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
           <div className="relative text-center lg:text-left">
             <div 
-              className="absolute -top-32 left-1/2 -translate-x-1/2 lg:left-0 lg:translate-x-0 text-[18vw] lg:text-[12vw] font-serif italic text-white/[0.12] whitespace-nowrap pointer-events-none select-none" 
+              className="absolute -top-32 left-1/2 -translate-x-1/2 lg:left-0 lg:translate-x-0 text-[18vw] lg:text-[12vw] font-serif italic text-white/[0.25] whitespace-nowrap pointer-events-none select-none" 
               aria-hidden="true"
             >
               MURCIA STUDIO
             </div>
             
-            <MapPin className="mx-auto lg:ml-0 mb-14 text-zinc-300" size={50} strokeWidth={1}/>
+            <MapPin className="mx-auto lg:ml-0 mb-14 text-zinc-100" size={50} strokeWidth={1}/>
             <h3 className="text-5xl md:text-7xl font-serif mb-10 italic text-white leading-tight">
               {CONTACT.address}
             </h3>
-            <p className="text-zinc-300 uppercase tracking-header text-[10px] font-black mb-20">
+            <p className="text-zinc-200 uppercase tracking-header text-[10px] font-black mb-20">
               Distrito {CONTACT.postalCode} • Murcia Centro
             </p>
             
             <div className="flex flex-col md:flex-row justify-center lg:justify-start gap-12 md:gap-24">
               {CONTACT.schedule.slice(0, 2).map((s, i) => (
                 <div key={i} className="text-center lg:text-left group">
-                  <span className="block text-[11px] uppercase tracking-premium text-zinc-300 mb-6 group-hover:text-white transition-all font-bold">
+                  <span className="block text-[11px] uppercase tracking-premium text-zinc-200 mb-6 group-hover:text-white transition-all font-bold">
                     {s.day}
                   </span>
-                  <span className="text-lg font-light text-zinc-200 tracking-widest">
+                  <span className="text-lg font-light text-zinc-100 tracking-widest">
                     {s.hours}
                   </span>
                 </div>
@@ -255,10 +254,10 @@ export default function Home() {
             </div>
             
             <div className="mt-16 flex flex-col md:flex-row gap-8 justify-center lg:justify-start">
-                <Link to="/reservar" className="text-[10px] uppercase tracking-premium font-bold text-white border border-white/20 px-10 py-4 rounded-full hover:bg-white hover:text-black transition-all">
+                <Link to="/reservar" className="text-[10px] uppercase tracking-premium font-bold text-white border border-white/30 px-10 py-4 rounded-full hover:bg-white hover:text-black transition-all">
                   Reservar Ahora
                 </Link>
-                <Link to="/contacto" className="text-[10px] uppercase tracking-premium font-bold text-zinc-400 py-4 hover:text-white transition-all">
+                <Link to="/contacto" className="text-[10px] uppercase tracking-premium font-bold text-zinc-300 py-4 hover:text-white transition-all">
                   Ver Detalles de Contacto
                 </Link>
             </div>
