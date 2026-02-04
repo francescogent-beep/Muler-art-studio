@@ -1,0 +1,12 @@
+{
+  "name": "MULER ART STUDIO | Barbería Murcia",
+  "short_name": "MulerArt",
+  "description": "Barbería premium y estudio de arte masculino en el centro de Murcia.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#000000",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
