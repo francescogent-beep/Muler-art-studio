@@ -23,13 +23,11 @@ const GoogleIcon = () => (
 
 export default function Home() {
   const [shouldLoadVideo, setShouldLoadVideo] = useState(false);
+  const [videoIsPlaying, setVideoIsPlaying] = useState(false);
 
   useEffect(() => {
-    // Detectamos si es desktop para cargar el video inmediatamente
-    const isDesktop = window.innerWidth >= 1024;
-    if (isDesktop) {
-      setShouldLoadVideo(true);
-    }
+    // Cargamos el vídeo en todos los dispositivos después del montaje inicial
+    setShouldLoadVideo(true);
   }, []);
 
   const faqSchema = {
@@ -52,7 +50,7 @@ export default function Home() {
         schema={faqSchema}
       />
 
-      {/* Hero Section - Optimized: Solid Black background is faster than a fallback image */}
+      {/* Hero Section - Solid Black base for optimized performance and LCP */}
       <section className="relative h-screen flex items-center justify-center bg-black overflow-hidden">
         <div className="absolute inset-0 z-0 overflow-hidden bg-black">
           {shouldLoadVideo && (
@@ -62,8 +60,8 @@ export default function Home() {
               loop
               playsInline
               preload="auto"
-              className="absolute inset-0 w-full h-full object-cover brightness-[0.35] contrast-125 grayscale-[0.3] transition-opacity duration-[1500ms] opacity-0"
-              onCanPlay={(e) => (e.currentTarget.style.opacity = '1')}
+              className={`absolute inset-0 w-full h-full object-cover brightness-[0.35] contrast-125 grayscale-[0.3] transition-opacity duration-[2000ms] ${videoIsPlaying ? 'opacity-100' : 'opacity-0'}`}
+              onPlaying={() => setVideoIsPlaying(true)}
             >
               <source src="https://0c62dtvaztg6t1ql.public.blob.vercel-storage.com/Untitled.mp4" type="video/mp4" />
             </video>
