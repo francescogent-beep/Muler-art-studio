@@ -136,7 +136,7 @@ const FooterSection = ({ title, children, defaultOpen = false, canToggle = false
       >
         <h3 className="text-[10px] uppercase tracking-[0.5em] text-white font-bold">{title}</h3>
         {canToggle && (
-          <div className="text-white/60 group-hover:text-white transition-colors">
+          <div className="text-white/80 group-hover:text-white transition-colors">
             {isOpen ? <Minus size={12} /> : <Plus size={12} />}
           </div>
         )}
@@ -189,7 +189,7 @@ const Footer = () => {
             <Link to="/reservar" className="hover:text-white transition-colors font-bold text-white/90">Reservar Cita</Link>
             
             <div className="flex flex-col gap-2 mt-6">
-              <span className="text-[9px] uppercase tracking-[0.3em] text-white/60 font-bold uppercase">Información Legal</span>
+              <span className="text-[9px] uppercase tracking-[0.3em] text-white/80 font-bold uppercase">Información Legal</span>
               <div className="flex flex-col gap-2 pl-4 border-l border-white/10 py-1">
                 <Link to="/legal/aviso-legal" className="text-[10px] text-zinc-100 hover:text-white transition-colors">Aviso Legal</Link>
                 <Link to="/legal/privacidad" className="text-[10px] text-zinc-100 hover:text-white transition-colors">Privacidad</Link>
@@ -216,7 +216,7 @@ const Footer = () => {
               </div>
               
               <div className="pt-8 border-t border-white/10">
-                <h4 className="text-[9px] uppercase tracking-[0.4em] text-white/60 font-bold mb-4 uppercase">Horario de Apertura</h4>
+                <h4 className="text-[9px] uppercase tracking-[0.4em] text-white/80 font-bold mb-4 uppercase">Horario de Apertura</h4>
                 <div className="space-y-2">
                   {CONTACT.schedule.map((s, i) => (
                     <div key={i} className="flex justify-between text-[11px]">
@@ -231,7 +231,7 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="max-w-[1800px] mx-auto px-8 md:px-16 mt-24 pt-12 border-t border-white/10 flex flex-col items-center gap-8 text-[9px] text-white/50 uppercase tracking-[0.5em] font-bold">
+      <div className="max-w-[1800px] mx-auto px-8 md:px-16 mt-24 pt-12 border-t border-white/10 flex flex-col items-center gap-8 text-[9px] text-white/80 uppercase tracking-[0.5em] font-bold">
         <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
           <div className="flex gap-10">
             <span className="text-white uppercase">Diseño & Técnica de Autor</span>
@@ -246,7 +246,7 @@ const Footer = () => {
             disegno web by <span className="text-white">FGDIGITALSYSTEMS</span>
           </a>
         </div>
-        <span className="text-white/30 pt-4 border-t border-white/5 w-full text-center uppercase tracking-widest">
+        <span className="text-white/70 pt-4 border-t border-white/5 w-full text-center uppercase tracking-widest">
           MULER ART STUDIO — MURCIA © {new Date().getFullYear()}
         </span>
       </div>
@@ -258,7 +258,7 @@ interface LayoutProps {
   children?: React.ReactNode;
 }
 
-export default function Layout({ children }: LayoutProps) {
+const Layout = ({ children }: LayoutProps) => {
   const { pathname } = useLocation();
 
   useEffect(() => {
@@ -280,4 +280,6 @@ export default function Layout({ children }: LayoutProps) {
       </Link>
     </div>
   );
-}
+};
+
+export default Layout;
