@@ -4,7 +4,7 @@ import SEO from '../components/SEO';
 import { IMAGES } from '../data';
 
 export default function Gallery() {
-  const allImages = [IMAGES.hero, IMAGES.interior, ...IMAGES.portfolio];
+  const allImages = [IMAGES.portfolio];
   
   const getGridSpan = (index: number) => {
     if (index % 7 === 0) return 'md:col-span-2 md:row-span-2';
