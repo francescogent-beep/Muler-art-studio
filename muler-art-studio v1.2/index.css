@@ -1,0 +1,90 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 
+ * MULER ART STUDIO - Architectural Stylesheet
+ */
+
+body { 
+  margin: 0; 
+  background-color: #000000; 
+  color: #FFFFFF; 
+  font-family: 'Manrope', sans-serif; 
+  -webkit-font-smoothing: antialiased; 
+  overflow-x: hidden; 
+}
+
+.bg-neon-spot {
+    position: fixed;
+    width: 80vw;
+    height: 80vw;
+    background: radial-gradient(circle, rgba(255,255,255,0.02) 0%, rgba(0,0,0,0) 60%);
+    pointer-events: none;
+    z-index: -1;
+    filter: blur(120px);
+}
+
+.neon-divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.2) 50%, transparent 100%);
+    box-shadow: 0 0 15px rgba(255,255,255,0.1);
+    width: 100%;
+}
+
+.neon-border {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.8s cubic-bezier(0.19, 1, 0.22, 1);
+}
+.neon-border:hover {
+    border-color: rgba(255, 255, 255, 0.4);
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.05);
+}
+
+/* Optimización: Menos desplazamiento y mayor velocidad para no retrasar LCP */
+.animate-reveal {
+    animation: reveal 0.6s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+    opacity: 0.1; 
+    transform: translateY(5px);
+    will-change: transform, opacity; /* Ayuda a la GPU en móviles */
+}
+
+@keyframes reveal {
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.glass-premium { 
+    background: rgba(255, 255, 255, 0.015); 
+    backdrop-filter: blur(30px); 
+    border: 1px solid rgba(255, 255, 255, 0.08); 
+}
+
+.img-premium {
+    filter: grayscale(0.2) contrast(1.1) brightness(0.8);
+    transition: all 1s ease;
+}
+.group:hover .img-premium {
+    filter: grayscale(0) contrast(1) brightness(1);
+}
+
+@keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+.animate-marquee {
+    display: flex;
+    width: fit-content;
+    animation: marquee 60s linear infinite;
+    will-change: transform; 
+}
+
+::-webkit-scrollbar { width: 3px; }
+::-webkit-scrollbar-track { background: #000; }
+::-webkit-scrollbar-thumb { background: #1a1a1a; }
+::-webkit-scrollbar-thumb:hover { background: #ffffff; }
+
+.font-serif { font-family: 'Cormorant Garamond', serif; }
+.font-sans { font-family: 'Manrope', sans-serif; }
+.font-logo { font-family: 'Playfair Display', serif; }
+.tracking-premium { letter-spacing: 0.4em; }
+.tracking-header { letter-spacing: 0.6em; }
