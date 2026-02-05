@@ -35,16 +35,19 @@ export default function Home() {
   };
 
   return (
-    <div className="animate-reveal">
+    <div>
       <SEO 
         title="MULER ART STUDIO | Barbería de Autor en Murcia | Estilo & Precisión"
         description="Experiencia de barbería premium en el centro de Murcia. Especialistas en corte técnico, afeitado tradicional y cuidado masculino de alto nivel."
         schema={faqSchema}
       />
 
-      {/* Full-bleed Hero Section */}
-      <section className="relative h-screen flex items-center justify-center bg-black overflow-hidden">
-        <div className="absolute inset-0 z-0 overflow-hidden bg-black">
+      {/* Full-bleed Hero Section - Background Image added for instant LCP */}
+      <section 
+        className="relative h-screen flex items-center justify-center bg-black overflow-hidden bg-cover bg-center"
+        style={{ backgroundImage: `url(${IMAGES.hero})` }}
+      >
+        <div className="absolute inset-0 z-0 overflow-hidden bg-black/40">
           <video
             autoPlay
             muted
@@ -62,23 +65,23 @@ export default function Home() {
         
         <div className="relative z-30 text-center px-6 max-w-[1400px]">
           <div className="overflow-hidden mb-10">
-            <span className="block uppercase tracking-header text-[7px] md:text-[10px] text-zinc-100 font-black animate-reveal [animation-delay:300ms]">
+            <span className="block uppercase tracking-header text-[7px] md:text-[10px] text-zinc-100 font-black animate-reveal [animation-delay:100ms]">
               ACTITUD • PRECISIÓN • ESTILO
             </span>
           </div>
           
-          <h1 className="text-5xl md:text-[8vw] font-serif leading-[0.9] mb-8 animate-reveal [animation-delay:500ms] text-white">
+          <h1 className="text-5xl md:text-[8vw] font-serif leading-[0.9] mb-8 animate-reveal [animation-delay:250ms] text-white">
             BARBERÍA DE <br /> 
             <span className="italic font-light text-zinc-100 text-[0.85em]">AUTOR EN MURCIA</span>
           </h1>
 
-          <div className="overflow-hidden mb-16 animate-reveal [animation-delay:650ms]">
+          <div className="overflow-hidden mb-16 animate-reveal [animation-delay:400ms]">
             <p className="text-zinc-100 text-lg md:text-2xl font-light tracking-wide max-w-2xl mx-auto leading-relaxed">
               No vienes a cortarte el pelo. <br className="md:hidden" /> Vienes a verte mejor.
             </p>
           </div>
 
-          <div className="flex flex-col md:flex-row gap-10 justify-center items-center animate-reveal [animation-delay:800ms]">
+          <div className="flex flex-col md:flex-row gap-10 justify-center items-center animate-reveal [animation-delay:550ms]">
             <Link to="/reservar" className="w-full md:w-auto neon-border bg-white/5 backdrop-blur-md px-20 py-6 text-[11px] uppercase tracking-premium font-black text-white hover:bg-white hover:text-black transition-all duration-1000 rounded-full">
               RESERVAR CITA
             </Link>
@@ -221,14 +224,14 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Location Section - Re-designed for column fit and clarity */}
+      {/* Location Section - Contrast Optimized for Accessibility */}
       <section className="py-40 bg-black px-8 relative overflow-hidden">
         <div className="max-w-[1600px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-32 items-stretch">
           <div className="relative flex flex-col justify-center bg-zinc-950/50 p-12 md:p-20 rounded-3xl border border-white/5 overflow-hidden">
              <div className="relative z-10">
                 <div className="flex items-center gap-4 mb-10">
                    <div className="w-12 h-[1px] bg-white/20"></div>
-                   <span className="text-zinc-400 uppercase tracking-[0.5em] text-[10px] font-black">Localización</span>
+                   <span className="text-zinc-200 uppercase tracking-[0.5em] text-[10px] font-black">Localización</span>
                 </div>
                 
                 <div className="flex flex-col gap-6 mb-16">
@@ -238,7 +241,7 @@ export default function Home() {
                         {CONTACT.address}
                       </h3>
                    </div>
-                   <p className="text-zinc-300 text-lg font-light tracking-widest pl-12">
+                   <p className="text-zinc-100 text-lg font-light tracking-widest pl-12">
                      Distrito {CONTACT.postalCode} • Murcia Centro
                    </p>
                 </div>
@@ -246,7 +249,7 @@ export default function Home() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-12 pl-12">
                    {CONTACT.schedule.slice(0, 2).map((s, i) => (
                       <div key={i} className="flex flex-col gap-3">
-                         <span className="text-[10px] uppercase tracking-widest text-zinc-500 font-bold uppercase">{s.day}</span>
+                         <span className="text-[10px] uppercase tracking-widest text-zinc-300 font-bold uppercase">{s.day}</span>
                          <span className="text-sm text-zinc-200 font-light">{s.hours}</span>
                       </div>
                    ))}
