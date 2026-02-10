@@ -158,7 +158,7 @@ const Footer = () => {
             "Un santuario dedicado a la estética masculina donde el arte y la precisión convergen para redefinir el estilo personal en el corazón de Murcia."
           </p>
           <div className="flex gap-10">
-            <a href="https://instagram.com/mulerartstudio" target="_blank" rel="noopener noreferrer" className="text-white hover:text-zinc-300 transition-colors flex items-center gap-2 text-[10px] uppercase tracking-widest font-bold">
+            <a href={CONTACT.instagramUrl} target="_blank" rel="noopener noreferrer" className="text-white hover:text-zinc-300 transition-colors flex items-center gap-2 text-[10px] uppercase tracking-widest font-bold">
               <Instagram size={16} strokeWidth={1}/> INSTAGRAM
             </a>
             <a href={`https://wa.me/${CONTACT.whatsapp}`} target="_blank" rel="noopener noreferrer" className="text-white hover:text-zinc-300 transition-colors flex items-center gap-2 text-[10px] uppercase tracking-widest font-bold">
