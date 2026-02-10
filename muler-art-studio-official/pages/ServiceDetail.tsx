@@ -21,20 +21,10 @@ export default function ServiceDetail({ service }: Props) {
         slug={service.slug}
         keywords={service.keywords}
         schema={{
-          "@context": "https://schema.org",
           "@type": "Service",
           "serviceType": service.title,
           "provider": {
-            "@type": "BarberShop",
-            "name": CONTACT.name,
-            "image": IMAGES.interior,
-            "telephone": CONTACT.phone,
-            "address": {
-              "@type": "PostalAddress",
-              "streetAddress": CONTACT.address,
-              "addressLocality": CONTACT.city,
-              "postalCode": CONTACT.postalCode
-            }
+            "@id": "https://mulerartstudio.com/#organization"
           },
           "areaServed": {
             "@type": "City",
