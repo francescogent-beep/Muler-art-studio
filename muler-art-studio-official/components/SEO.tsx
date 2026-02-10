@@ -102,7 +102,7 @@ export default function SEO({ title, description, slug = '', keywords = [], sche
         "reviewCount": CONTACT.reviewCount
       },
       "sameAs": [
-        "https://www.instagram.com/mulerartstudio",
+        CONTACT.instagramUrl,
         `https://wa.me/${CONTACT.whatsapp}`
       ]
     };
