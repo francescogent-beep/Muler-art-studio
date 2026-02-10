@@ -48,16 +48,16 @@ export default function SEO({ title, description, slug = '', keywords = [], sche
     
     const openingHours = CONTACT.schedule.flatMap(s => (s as any).schema || []);
 
-    // 1. BarberShop Schema
-    const barberShopSchema = {
+    // 1. BarberShop Schema (Main Entity)
+    const barberShopSchema: any = {
       "@type": "BarberShop",
       "@id": "https://mulerartstudio.com/#organization",
       "name": CONTACT.name,
-      "legalName": (CONTACT as any).legalName,
-      "image": IMAGES.interior, // Fix: Use the absolute URL directly to avoid double prefixing
       "url": "https://mulerartstudio.com",
+      "logo": "https://mulerartstudio.com/favicon.svg",
+      "image": IMAGES.interior,
       "telephone": CONTACT.phone,
-      "priceRange": CONTACT.priceRange || "$$",
+      "priceRange": CONTACT.priceRange || "€€",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": CONTACT.address,
@@ -73,10 +73,10 @@ export default function SEO({ title, description, slug = '', keywords = [], sche
       "openingHours": openingHours,
       "aggregateRating": {
         "@type": "AggregateRating",
-        "ratingValue": CONTACT.rating.toString(),
-        "bestRating": "5",
-        "worstRating": "1",
-        "reviewCount": CONTACT.reviewCount.toString()
+        "ratingValue": CONTACT.rating,
+        "bestRating": 5,
+        "worstRating": 1,
+        "reviewCount": CONTACT.reviewCount
       },
       "sameAs": [
         "https://www.instagram.com/mulerartstudio",
@@ -87,6 +87,7 @@ export default function SEO({ title, description, slug = '', keywords = [], sche
     // 2. Breadcrumb Schema
     const breadcrumbList = {
       "@type": "BreadcrumbList",
+      "@id": `https://mulerartstudio.com/${slug}#breadcrumb`,
       "itemListElement": [
         {
           "@type": "ListItem",
@@ -106,7 +107,16 @@ export default function SEO({ title, description, slug = '', keywords = [], sche
       });
     }
 
-    const combinedSchema = schema ? [barberShopSchema, breadcrumbList, schema] : [barberShopSchema, breadcrumbList];
+    // Clean additional schema from potential @context to avoid nesting errors
+    let cleanExtraSchema = schema;
+    if (schema && schema['@context']) {
+      const { '@context': _, ...rest } = schema;
+      cleanExtraSchema = rest;
+    }
+
+    const combinedSchema = cleanExtraSchema 
+      ? [barberShopSchema, breadcrumbList, cleanExtraSchema] 
+      : [barberShopSchema, breadcrumbList];
 
     script.text = JSON.stringify({
       "@context": "https://schema.org",
