@@ -46,18 +46,41 @@ export default function SEO({ title, description, slug = '', keywords = [], sche
     script.id = 'json-ld-schema';
     script.type = 'application/ld+json';
     
-    const openingHours = CONTACT.schedule.flatMap(s => (s as any).schema || []);
+    // Modern OpeningHoursSpecification (Resolves validation parsing issues)
+    const openingHoursSpec = [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday"],
+        "opens": "09:00",
+        "closes": "14:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday"],
+        "opens": "16:00",
+        "closes": "20:30"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Friday", "Saturday"],
+        "opens": "09:00",
+        "closes": "22:00"
+      }
+    ];
 
-    // 1. BarberShop Schema (Main Entity)
-    const barberShopSchema: any = {
-      "@type": "BarberShop",
-      "@id": "https://mulerartstudio.com/#organization",
+    // Main LocalBusiness Schema (Using multi-type for maximum compatibility)
+    const mainBusinessSchema: any = {
+      "@type": ["BarberShop", "LocalBusiness"],
+      "@id": "https://mulerartstudio.com/#business",
       "name": CONTACT.name,
       "url": "https://mulerartstudio.com",
-      "logo": "https://mulerartstudio.com/favicon.svg",
-      "image": IMAGES.interior,
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://mulerartstudio.com/favicon.svg"
+      },
+      "image": [IMAGES.interior, IMAGES.hero],
       "telephone": CONTACT.phone,
-      "priceRange": CONTACT.priceRange || "€€",
+      "priceRange": "€€",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": CONTACT.address,
@@ -70,7 +93,7 @@ export default function SEO({ title, description, slug = '', keywords = [], sche
         "latitude": CONTACT.coordinates.latitude,
         "longitude": CONTACT.coordinates.longitude
       },
-      "openingHours": openingHours,
+      "openingHoursSpecification": openingHoursSpec,
       "aggregateRating": {
         "@type": "AggregateRating",
         "ratingValue": CONTACT.rating,
@@ -84,7 +107,7 @@ export default function SEO({ title, description, slug = '', keywords = [], sche
       ]
     };
 
-    // 2. Breadcrumb Schema
+    // Breadcrumb Schema
     const breadcrumbList = {
       "@type": "BreadcrumbList",
       "@id": `https://mulerartstudio.com/${slug}#breadcrumb`,
@@ -107,16 +130,21 @@ export default function SEO({ title, description, slug = '', keywords = [], sche
       });
     }
 
-    // Clean additional schema from potential @context to avoid nesting errors
+    // Clean extra schema from nested context
     let cleanExtraSchema = schema;
     if (schema && schema['@context']) {
       const { '@context': _, ...rest } = schema;
       cleanExtraSchema = rest;
     }
 
+    // Linking Service to the business via @id
+    if (cleanExtraSchema && cleanExtraSchema['@type'] === 'Service') {
+      cleanExtraSchema.provider = { "@id": "https://mulerartstudio.com/#business" };
+    }
+
     const combinedSchema = cleanExtraSchema 
-      ? [barberShopSchema, breadcrumbList, cleanExtraSchema] 
-      : [barberShopSchema, breadcrumbList];
+      ? [mainBusinessSchema, breadcrumbList, cleanExtraSchema] 
+      : [mainBusinessSchema, breadcrumbList];
 
     script.text = JSON.stringify({
       "@context": "https://schema.org",
