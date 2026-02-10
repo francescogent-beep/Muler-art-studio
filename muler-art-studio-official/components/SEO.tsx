@@ -54,7 +54,7 @@ export default function SEO({ title, description, slug = '', keywords = [], sche
       "@id": "https://mulerartstudio.com/#organization",
       "name": CONTACT.name,
       "legalName": (CONTACT as any).legalName,
-      "image": `https://mulerartstudio.com${IMAGES.interior}`,
+      "image": IMAGES.interior, // Fix: Use the absolute URL directly to avoid double prefixing
       "url": "https://mulerartstudio.com",
       "telephone": CONTACT.phone,
       "priceRange": CONTACT.priceRange || "$$",
@@ -73,8 +73,10 @@ export default function SEO({ title, description, slug = '', keywords = [], sche
       "openingHours": openingHours,
       "aggregateRating": {
         "@type": "AggregateRating",
-        "ratingValue": CONTACT.rating,
-        "reviewCount": CONTACT.reviewCount
+        "ratingValue": CONTACT.rating.toString(),
+        "bestRating": "5",
+        "worstRating": "1",
+        "reviewCount": CONTACT.reviewCount.toString()
       },
       "sameAs": [
         "https://www.instagram.com/mulerartstudio",
