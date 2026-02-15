@@ -42,8 +42,9 @@ export const optimizeImg = (url: string, suffix: 'l' | 'h' | '' = 'h') => {
   if (!url.includes('imgur.com')) return url;
   if (url.includes('.mp4')) return url;
   const parts = url.split('.');
-  const ext = parts.pop();
-  return `${parts.join('.')}${suffix}.${ext}`;
+  parts.pop(); // Remove extension
+  // Imgur converts to webp automatically if we append the suffix and use .webp extension
+  return `${parts.join('.')}${suffix}.webp`;
 };
 
 export const BLOG_POSTS = [
