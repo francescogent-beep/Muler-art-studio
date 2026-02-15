@@ -135,7 +135,7 @@ const FindUsBlock = () => (
           <Navigation size={20} />
         </div>
         <div>
-          <h4 className="text-[10px] uppercase tracking-widest font-black text-white/40 mb-1">Cómo encontrarnos</h4>
+          <h4 className="text-[10px] uppercase tracking-widest font-black text-white/70 mb-1">Cómo encontrarnos</h4>
           <p className="text-sm text-zinc-100 font-light max-w-lg">
             Estamos situados en la Av. Miguel de Cervantes 9, en el barrio de <strong>San Basilio</strong>. <br className="hidden md:block"/> 
             Junto a la redacción de <strong>La Opinión</strong> y muy cerca de <strong>El Corte Inglés</strong>.
@@ -160,7 +160,7 @@ const MobileFloatingButtons = () => (
       href={`https://wa.me/${CONTACT.whatsapp}`}
       target="_blank"
       rel="noopener noreferrer"
-      className="flex-1 bg-emerald-500 text-white flex items-center justify-center gap-3 py-4 rounded-full font-bold text-[10px] uppercase tracking-widest shadow-lg shadow-emerald-500/20"
+      className="flex-1 bg-emerald-500 text-zinc-950 flex items-center justify-center gap-3 py-4 rounded-full font-bold text-[10px] uppercase tracking-widest shadow-lg shadow-emerald-500/20"
     >
       <MessageCircle size={18} /> WHATSAPP
     </a>
