@@ -17,19 +17,15 @@
     <link rel="dns-prefetch" href="https://fonts.googleapis.com">
     <link rel="dns-prefetch" href="https://i.imgur.com">
     
-    <!-- Module Preload: Breaks the critical chain by fetching JS immediately -->
-    <link rel="modulepreload" href="/index.tsx">
-    
     <!-- Optimized Fonts Loading -->
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Playfair+Display:ital,wght@0,400;0,700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
 
-    <!-- Booksy Official Widget - Added defer to prevent render blocking -->
+    <!-- Booksy Official Widget - Defer to prevent render blocking -->
     <script type="text/javascript" src="https://booksy.com/widget/code.js?id=114716&country=es&lang=es-ES" defer></script>
 
-    <!-- Tailwind CDN - Added defer for better performance during preview -->
+    <!-- Tailwind CDN - Defer for better performance -->
     <script src="https://cdn.tailwindcss.com" defer></script>
     <script>
-      // We keep the configuration inline to ensure it's ready when tailwind loads
       window.tailwindConfigReady = true;
       const configureTailwind = () => {
         if (window.tailwind) {
@@ -83,6 +79,7 @@
     
     <div id="root"></div>
     
+    <!-- Application Entry Point -->
     <script type="module" src="/index.tsx"></script>
 </body>
 </html>
