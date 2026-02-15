@@ -58,6 +58,7 @@ export default function Home() {
             loop
             playsInline
             preload="auto"
+            poster={optimizeImg(IMAGES.hero, 'h')}
             style={{ fetchPriority: 'high' } as any}
             className="absolute inset-0 w-full h-full object-cover brightness-[0.35] contrast-125 grayscale-[0.3] bg-black"
           >
@@ -192,7 +193,7 @@ export default function Home() {
               {[
                 { n: '01', t: 'Técnica', d: 'Cortes de autor que respetan tu fisionomía. Somos tu peluquería de hombre en Murcia de confianza.', link: '/servicios' },
                 { n: '02', t: 'Productos', d: 'Selección exclusiva de cosmética masculina premium disponible en nuestro estudio de Murcia.', link: '/servicios' },
-                { n: '03', t: 'Ritual', d: 'Toallas calientes y masajes capilares en San Basilio. Un oasis de calma.', link: CONTACT.booksyUrl, isExternal: true },
+                { n: '03', t: 'Ritual', d: 'Toallas calientes y masajes campilares en San Basilio. Un oasis de calma.', link: CONTACT.booksyUrl, isExternal: true },
                 { n: '04', t: 'Espacio', d: 'Un estudio moderno en Av. Miguel de Cervantes que redefine la barbería clásica murciana.', link: '/galeria' }
               ].map((item) => (
                 item.isExternal ? (
