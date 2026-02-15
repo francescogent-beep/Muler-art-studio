@@ -17,50 +17,49 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <link rel="manifest" href="/metadata.json">
     
-    <!-- Resource Hints -->
+    <!-- Critical Resource Hints -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://i.imgur.com">
-    <link rel="preconnect" href="https://public.blob.vercel-storage.com">
-    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
-    <link rel="dns-prefetch" href="https://i.imgur.com">
     
     <!-- Optimized Fonts Loading -->
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Playfair+Display:ital,wght@0,400;0,700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
 
-    <!-- Booksy Official Widget - Defer to prevent render blocking -->
-    <script type="text/javascript" src="https://booksy.com/widget/code.js?id=114716&country=es&lang=es-ES" defer></script>
-
-    <!-- Tailwind CDN - Defer for better performance -->
-    <script src="https://cdn.tailwindcss.com" defer></script>
+    <!-- Intelligent Tailwind Switch for Preview/Production -->
     <script>
-      window.tailwindConfigReady = true;
-      const configureTailwind = () => {
-        if (window.tailwind) {
-          tailwind.config = {
-            theme: {
-              extend: {
-                colors: {
-                  brand: {
-                    black: "#000000",
-                    white: "#FFFFFF",
-                    zinc: "#09090b",
-                    accent: "rgba(255, 255, 255, 0.15)"
+      (function() {
+        const isProd = window.location.hostname === 'mulerartstudio.com' || window.location.hostname === 'www.mulerartstudio.com';
+        if (!isProd) {
+          const script = document.createElement('script');
+          script.src = "https://cdn.tailwindcss.com";
+          script.onload = () => {
+            tailwind.config = {
+              theme: {
+                extend: {
+                  colors: {
+                    brand: {
+                      black: "#000000",
+                      white: "#FFFFFF",
+                      zinc: "#09090b",
+                      accent: "rgba(255, 255, 255, 0.15)"
+                    }
+                  },
+                  fontFamily: {
+                    serif: ["Cormorant Garamond", "serif"],
+                    sans: ["Manrope", "sans-serif"],
+                    logo: ["Playfair Display", "serif"],
+                  },
+                  letterSpacing: {
+                    'premium': '0.4em',
+                    'header': '0.6em',
                   }
-                },
-                fontFamily: {
-                  serif: ["Cormorant Garamond", "serif"],
-                  sans: ["Manrope", "sans-serif"],
-                  logo: ["Playfair Display", "serif"],
                 }
               }
-            }
-          }
-        } else {
-          setTimeout(configureTailwind, 10);
+            };
+          };
+          document.head.appendChild(script);
         }
-      };
-      configureTailwind();
+      })();
     </script>
 
 <script type="importmap">
@@ -87,7 +86,6 @@
     
     <div id="root">
         <!-- Contenido estático para indexación SEO (SSR Manual) -->
-        <!-- Este contenido se reemplaza automáticamente cuando React carga -->
         <article style="display:none" aria-hidden="true">
             <h1>MULER ART STUDIO | Barbería de Autor en Murcia</h1>
             <p>No vienes a cortarte el pelo. Vienes a verte mejor.</p>
@@ -109,7 +107,7 @@
         <style>@keyframes pulse { 0%, 100% { opacity: 0.5; } 50% { opacity: 1; } }</style>
     </div>
     
-    <!-- Application Entry Point -->
-    <script type="module" src="/index.tsx"></script>
+    <!-- Application Entry Point with High Priority -->
+    <script type="module" src="/index.tsx" fetchpriority="high"></script>
 </body>
 </html>
