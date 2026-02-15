@@ -1,0 +1,115 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MULER ART STUDIO | Barbería de Autor en Murcia</title>
+    <meta name="description" content="Barbería premium y estudio de arte masculino en el centro de Murcia. Especialistas en corte técnico, degradados (fade) y rituales de barba en San Basilio.">
+    
+    <!-- OpenGraph Fallback -->
+    <meta property="og:title" content="MULER ART STUDIO | Barbería de Autor en Murcia">
+    <meta property="og:description" content="Experiencia de barbería premium en el centro de Murcia. No vienes a cortarte el pelo, vienes a verte mejor.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mulerartstudio.com/">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="manifest" href="/metadata.json">
+    
+    <!-- Resource Hints -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://i.imgur.com">
+    <link rel="preconnect" href="https://public.blob.vercel-storage.com">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://i.imgur.com">
+    
+    <!-- Optimized Fonts Loading -->
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Playfair+Display:ital,wght@0,400;0,700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+
+    <!-- Booksy Official Widget - Defer to prevent render blocking -->
+    <script type="text/javascript" src="https://booksy.com/widget/code.js?id=114716&country=es&lang=es-ES" defer></script>
+
+    <!-- Tailwind CDN - Defer for better performance -->
+    <script src="https://cdn.tailwindcss.com" defer></script>
+    <script>
+      window.tailwindConfigReady = true;
+      const configureTailwind = () => {
+        if (window.tailwind) {
+          tailwind.config = {
+            theme: {
+              extend: {
+                colors: {
+                  brand: {
+                    black: "#000000",
+                    white: "#FFFFFF",
+                    zinc: "#09090b",
+                    accent: "rgba(255, 255, 255, 0.15)"
+                  }
+                },
+                fontFamily: {
+                  serif: ["Cormorant Garamond", "serif"],
+                  sans: ["Manrope", "sans-serif"],
+                  logo: ["Playfair Display", "serif"],
+                }
+              }
+            }
+          }
+        } else {
+          setTimeout(configureTailwind, 10);
+        }
+      };
+      configureTailwind();
+    </script>
+
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.4",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "react-router-dom": "https://esm.sh/react-router-dom@^7.13.0",
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "lucide-react": "https://esm.sh/lucide-react@^0.563.0",
+    "path": "https://esm.sh/path@^0.12.7",
+    "url": "https://esm.sh/url@^0.11.4",
+    "vite": "https://esm.sh/vite@^7.3.1",
+    "@vitejs/plugin-react": "https://esm.sh/@vitejs/plugin-react@^5.1.3"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body class="bg-black">
+    <!-- Ambient Background Elements -->
+    <div class="bg-neon-spot top-[-20%] left-[-20%] opacity-40"></div>
+    <div class="bg-neon-spot bottom-[-20%] right-[-20%] opacity-40"></div>
+    
+    <div id="root">
+        <!-- Contenido estático para indexación SEO (SSR Manual) -->
+        <!-- Este contenido se reemplaza automáticamente cuando React carga -->
+        <article style="display:none" aria-hidden="true">
+            <h1>MULER ART STUDIO | Barbería de Autor en Murcia</h1>
+            <p>No vienes a cortarte el pelo. Vienes a verte mejor.</p>
+            <h2>Mejor Barbería en Murcia Centro - San Basilio</h2>
+            <p>Especialistas en cortes degradados (fade), diseño de barba con ritual de toalla caliente y estética masculina premium en Murcia.</p>
+            <ul>
+                <li>Corte de pelo técnico</li>
+                <li>Arreglo de barba</li>
+                <li>Diseño de cejas</li>
+                <li>Ritual Premium</li>
+            </ul>
+            <p>Ubicación: Av. Miguel de Cervantes, 9, 30009 Murcia. Cerca de La Opinión.</p>
+        </article>
+        
+        <!-- Skeleton loader simple para UX -->
+        <div style="height:100vh; display:flex; align-items:center; justify-content:center; background:#000;">
+            <div style="font-family:serif; font-size:24px; color:#fff; letter-spacing:0.2em; animation:pulse 2s infinite italic">MULER ART STUDIO</div>
+        </div>
+        <style>@keyframes pulse { 0%, 100% { opacity: 0.5; } 50% { opacity: 1; } }</style>
+    </div>
+    
+    <!-- Application Entry Point -->
+    <script type="module" src="/index.tsx"></script>
+</body>
+</html>
