@@ -58,7 +58,6 @@ export default function Home() {
             loop
             playsInline
             preload="auto"
-            poster={optimizeImg(IMAGES.hero, 'h')}
             style={{ fetchPriority: 'high' } as any}
             className="absolute inset-0 w-full h-full object-cover brightness-[0.35] contrast-125 grayscale-[0.3] bg-black"
           >
