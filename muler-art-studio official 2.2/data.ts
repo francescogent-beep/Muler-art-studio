@@ -133,7 +133,7 @@ export const SERVICES = [
     price: '15.00',
     duration: '30 min',
     keywords: ['corte pelo murcia', 'peluquería hombre murcia', 'mejor barbero murcia'],
-    image: '/images/corte-barba-MAS.webp'
+    image: '/images/corte-pelo-MAS.webp'
   },
   {
     id: 'corte-barba',
@@ -144,7 +144,8 @@ export const SERVICES = [
     price: '20.00',
     duration: '45 min',
     keywords: ['corte y barba murcia', 'barbería completa murcia', 'diseño barba murcia'],
-    image: 'https://i.imgur.com/rTfwzay.jpeg'
+    image: '/images/corte-barba-MAS.webp
+'
   },
   {
     id: 'corte-completo',
