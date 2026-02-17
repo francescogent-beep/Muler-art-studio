@@ -9,7 +9,7 @@ export const CONTACT = {
   address: 'Av. Miguel de Cervantes, 9',
   postalCode: '30009',
   city: 'Murcia',
-  neighborhood: 'San Basilio / Junto a La Opinión',
+  neighborhood: 'San Basilio / Junto a La Opinión / Ranero',
   country: 'ES',
   coordinates: {
     latitude: 37.9957877,
