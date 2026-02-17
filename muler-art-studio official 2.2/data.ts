@@ -166,7 +166,7 @@ export const SERVICES = [
     price: '8.00',
     duration: '20 min',
     keywords: ['arreglo barba murcia', 'perfilado barba murcia', 'barber shop murcia'],
-    image: 'https://i.imgur.com/ll3522A.jpeg'
+    image: '/images/arreglo-barba.webp'
   },
   {
     id: 'corte-premium',
