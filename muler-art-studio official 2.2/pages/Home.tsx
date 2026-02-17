@@ -1,5 +1,4 @@
-
-import React, { useRef } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Star, MapPin, ArrowRight, ChevronDown, CheckCircle2, Calendar, ChevronLeft } from 'lucide-react';
 import SEO from '../components/SEO';
@@ -20,6 +19,7 @@ export default function Home() {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const location = useLocation();
   const isGateway = location.pathname === '/barberia-murcia';
+  const [videoLoaded, setVideoLoaded] = useState(false);
 
   const scroll = (direction: 'left' | 'right') => {
     if (scrollContainerRef.current) {
@@ -58,8 +58,9 @@ export default function Home() {
             loop
             playsInline
             preload="auto"
+            onLoadedData={() => setVideoLoaded(true)}
             style={{ fetchPriority: 'high' } as any}
-            className="absolute inset-0 w-full h-full object-cover brightness-[0.35] contrast-125 grayscale-[0.3] bg-black"
+            className={`absolute inset-0 w-full h-full object-cover brightness-[0.35] contrast-125 grayscale-[0.3] bg-black transition-opacity duration-1000 ${videoLoaded ? 'opacity-100' : 'opacity-0'}`}
           >
             <source src="https://0c62dtvaztg6t1ql.public.blob.vercel-storage.com/Untitled.mp4" type="video/mp4" />
           </video>
