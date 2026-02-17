@@ -155,7 +155,7 @@ export const SERVICES = [
     price: '23.00',
     duration: '60 min',
     keywords: ['ritual completo murcia', 'barbería integral', 'estilo masculino murcia'],
-    image: 'https://i.imgur.com/OC4BdTu.jpeg'
+    image: 'public/461859504_564003032634979_7637309143125127325_n.webp'
   },
   {
     id: 'arreglo-barba',
