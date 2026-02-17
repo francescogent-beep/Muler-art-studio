@@ -144,7 +144,7 @@ export const SERVICES = [
     price: '20.00',
     duration: '45 min',
     keywords: ['corte y barba murcia', 'barbería completa murcia', 'diseño barba murcia'],
-    image: '/images/corte-barba-MAS.webp
+    image: '/images/corte-barba.webp
 '
   },
   {
