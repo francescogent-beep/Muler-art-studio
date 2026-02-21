@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from 'react';
+import React, { useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Star, MapPin, ArrowRight, ChevronDown, CheckCircle2, Calendar, ChevronLeft } from 'lucide-react';
 import SEO from '../components/SEO';
@@ -19,7 +19,6 @@ export default function Home() {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const location = useLocation();
   const isGateway = location.pathname === '/barberia-murcia';
-  const [videoLoaded, setVideoLoaded] = useState(false);
 
   const scroll = (direction: 'left' | 'right') => {
     if (scrollContainerRef.current) {
@@ -58,9 +57,8 @@ export default function Home() {
             loop
             playsInline
             preload="auto"
-            onLoadedData={() => setVideoLoaded(true)}
             style={{ fetchPriority: 'high' } as any}
-            className={`absolute inset-0 w-full h-full object-cover brightness-[0.35] contrast-125 grayscale-[0.3] bg-black transition-opacity duration-1000 ${videoLoaded ? 'opacity-100' : 'opacity-0'}`}
+            className="absolute inset-0 w-full h-full object-cover brightness-[0.35] contrast-125 grayscale-[0.3] bg-black"
           >
             <source src="https://0c62dtvaztg6t1ql.public.blob.vercel-storage.com/Untitled.mp4" type="video/mp4" />
           </video>
@@ -136,7 +134,7 @@ export default function Home() {
             </Link>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
             {SERVICES.slice(0, 4).map((s, idx) => (
               <Link to={`/${s.slug}`} key={s.id} className="group relative aspect-[3/4] overflow-hidden border border-white/10 p-12 flex flex-col justify-end bg-zinc-950 rounded-2xl">
                 <div className="absolute inset-0 z-0 overflow-hidden">
