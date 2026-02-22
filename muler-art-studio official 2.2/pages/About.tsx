@@ -18,7 +18,7 @@ export default function About() {
       <div className="max-w-[1800px] mx-auto px-8 md:px-16">
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-32 border-b border-white/10 pb-20 gap-12">
           <div className="max-w-4xl">
-            <span className="text-white/60 uppercase tracking-header text-[10px] font-black block mb-6">Nuestra Historia</span>
+            <span className="text-white uppercase tracking-header text-[11px] font-black block mb-6">Nuestra Historia</span>
             <h1 className="text-7xl md:text-9xl font-serif mb-8 italic leading-[0.8] text-white">Identidad <br/><span className="text-white/70 not-italic">& Disciplina</span></h1>
           </div>
           <div className="max-w-sm lg:text-right">
@@ -45,7 +45,7 @@ export default function About() {
               {ABOUT.philosophy} Consulta nuestros <Link to="/servicios" className="text-white underline decoration-white/20">servicios especializados</Link> en el centro de Murcia.
             </p>
             <div className="pt-8 border-t border-white/10">
-              <span className="text-[10px] uppercase tracking-header text-white/50 font-black block mb-4 uppercase">Misión</span>
+              <span className="text-white uppercase tracking-header text-[11px] font-black block mb-4 uppercase">Misión</span>
               <p className="text-white text-lg font-serif italic">
                 Convertirnos en la barbería de referencia en Murcia, reconocida por la calidad del servicio, la constancia y la confianza.
               </p>
@@ -54,7 +54,7 @@ export default function About() {
         </div>
 
         <div className="mb-56">
-          <span className="text-white/40 uppercase tracking-header text-[10px] font-black block mb-12 text-center uppercase">El Equipo de Autor</span>
+          <span className="text-white uppercase tracking-header text-[11px] font-black block mb-12 text-center uppercase">El Equipo de Autor</span>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             {ABOUT.team.map((member: any, i) => (
               <div key={i} className="glass-premium rounded-3xl border border-white/5 group hover:border-white/20 transition-all duration-700 overflow-hidden">
@@ -67,9 +67,9 @@ export default function About() {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60"></div>
                 </div>
                 <div className="p-10 md:p-12">
-                  <span className="text-[9px] uppercase tracking-[0.5em] text-white/40 font-bold block mb-4">Muler Artist</span>
+                  <span className="text-[10px] uppercase tracking-[0.5em] text-white/60 font-bold block mb-4">Muler Artist</span>
                   <h3 className="text-4xl md:text-5xl font-serif italic text-white mb-2">{member.name}</h3>
-                  <p className="text-white/60 uppercase tracking-widest text-[10px] font-bold">{member.role}</p>
+                  <p className="text-white/80 uppercase tracking-widest text-[11px] font-bold">{member.role}</p>
                   <div className="mt-8 h-[1px] w-12 bg-white/20 group-hover:w-full transition-all duration-1000"></div>
                 </div>
               </div>
