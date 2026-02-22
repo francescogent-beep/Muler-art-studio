@@ -112,7 +112,7 @@ export default function Home() {
                     <Star key={j} size={12} fill="#FFFFFF" className="text-white" />
                   ))}
                 </div>
-                <span className="text-[10px] font-black uppercase tracking-widest text-white/60 ml-2">Booksy Verified</span>
+                <span className="text-[10px] font-black uppercase tracking-widest text-white/80 ml-2">Booksy Verified</span>
               </div>
               <span className="text-xl md:text-2xl font-serif italic text-white whitespace-nowrap">
                 {review}
@@ -127,10 +127,10 @@ export default function Home() {
         <div className="max-w-[1600px] mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-end mb-12 md:mb-24 gap-8 md:gap-10">
             <div className="w-full md:w-auto">
-              <span className="text-white/40 uppercase tracking-header text-[8px] md:text-[10px] font-black block mb-4 md:mb-8">Nuestra Carta</span>
+              <span className="text-white uppercase tracking-header text-[11px] font-black block mb-4 md:mb-8">Nuestra Carta</span>
               <h2 className="text-5xl md:text-9xl font-serif italic text-white leading-none">Servicios</h2>
             </div>
-            <Link to="/servicios" className="text-[9px] md:text-[11px] uppercase tracking-premium font-black text-white/60 hover:text-white transition-all mb-2 md:mb-4 flex items-center gap-2">
+            <Link to="/servicios" className="text-[11px] md:text-[12px] uppercase tracking-premium font-black text-white hover:text-zinc-300 transition-all mb-2 md:mb-4 flex items-center gap-2">
               EXPLORAR TODO EL MENÚ <ArrowRight size={14} className="md:w-4 md:h-4"/>
             </Link>
           </div>
@@ -164,12 +164,12 @@ export default function Home() {
                   <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-90 group-hover:opacity-60 transition-opacity duration-1000"></div>
                 </div>
                 <div className="relative z-10">
-                  <span className="absolute -top-16 md:-top-56 right-0 text-[10px] md:text-[14px] text-white/10 font-serif group-hover:text-white/30 transition-all duration-700 tracking-widest">0{idx + 1}</span>
+                  <span className="absolute -top-16 md:-top-56 right-0 text-[11px] md:text-[14px] text-white/60 font-serif group-hover:text-white/80 transition-all duration-700 tracking-widest">0{idx + 1}</span>
                   <h3 className="text-xl md:text-3xl lg:text-5xl font-serif italic mb-2 md:mb-6 group-hover:-translate-y-2 transition-all duration-700 text-white/90 group-hover:text-white leading-[1.1] tracking-tight line-clamp-2 md:line-clamp-none drop-shadow-2xl">
                     {s.title}
                   </h3>
                   <div className="overflow-hidden">
-                    <p className="text-[8px] md:text-[11px] uppercase tracking-[0.3em] md:tracking-[0.5em] text-white/60 group-hover:text-white opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-700 font-black">
+                    <p className="text-[10px] md:text-[11px] uppercase tracking-[0.3em] md:tracking-[0.5em] text-white group-hover:text-white opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-700 font-black">
                       MÁS DETALLES
                     </p>
                   </div>
@@ -185,7 +185,7 @@ export default function Home() {
         <div className="max-w-[1600px] mx-auto relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-24">
             <div className="lg:col-span-5">
-              <span className="text-white/60 uppercase tracking-header text-[10px] font-black block mb-12 uppercase">Filosofía Muler</span>
+              <span className="text-white uppercase tracking-header text-[11px] font-black block mb-12 uppercase">Filosofía Muler</span>
               <h2 className="text-6xl md:text-8xl font-serif italic mb-16 leading-[0.9] text-white">
                 Técnica de barbero en Murcia para tu <span className="text-white">bienestar.</span>
               </h2>
@@ -223,8 +223,8 @@ export default function Home() {
          <div className="max-w-[1600px] mx-auto">
             <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
               <div>
-                <span className="text-white/60 uppercase tracking-header text-[10px] font-black block mb-8 uppercase">Portafolio</span>
-                <h2 className="text-6xl md:text-8xl font-serif italic text-white leading-none">Cortes <br/><span className="not-italic text-zinc-400">en Murcia</span></h2>
+                <span className="text-white uppercase tracking-header text-[11px] font-black block mb-8 uppercase">Portafolio</span>
+                <h2 className="text-6xl md:text-8xl font-serif italic text-white leading-none">Cortes <br/><span className="not-italic text-zinc-300">en Murcia</span></h2>
               </div>
               <Link to="/galeria" className="text-[11px] uppercase tracking-premium font-black text-white border-b border-white/20 pb-2 hover:border-white transition-all uppercase">
                 VER GALERÍA COMPLETA <ArrowRight size={14} className="inline ml-3"/>
@@ -250,8 +250,8 @@ export default function Home() {
         <div className="max-w-[1600px] mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
             <div>
-              <span className="text-white/60 uppercase tracking-header text-[10px] font-black block mb-8 uppercase">Crónicas de Estilo</span>
-              <h2 className="text-6xl md:text-8xl font-serif italic text-white leading-none">Cultura <br/><span className="not-italic text-zinc-400">Barber Murcia</span></h2>
+              <span className="text-white uppercase tracking-header text-[11px] font-black block mb-8 uppercase">Crónicas de Estilo</span>
+              <h2 className="text-6xl md:text-8xl font-serif italic text-white leading-none">Cultura <br/><span className="not-italic text-zinc-300">Barber Murcia</span></h2>
             </div>
             <div className="flex gap-4 mb-4">
               <button 
@@ -295,11 +295,11 @@ export default function Home() {
                   </span>
                 </div>
                 <div className="max-w-md">
-                   <div className="flex items-center gap-3 text-[9px] uppercase tracking-widest text-zinc-400 font-bold mb-4">
+                   <div className="flex items-center gap-3 text-[9px] uppercase tracking-widest text-zinc-300 font-bold mb-4">
                      <Calendar size={12} /> {post.date}
                    </div>
-                   <h3 className="text-3xl font-serif italic text-white group-hover:text-zinc-300 transition-colors leading-tight mb-4">{post.title}</h3>
-                   <p className="text-zinc-400 text-sm font-light leading-relaxed line-clamp-2">{post.excerpt}</p>
+                   <h3 className="text-3xl font-serif italic text-white group-hover:text-zinc-100 transition-colors leading-tight mb-4">{post.title}</h3>
+                   <p className="text-zinc-300 text-sm font-light leading-relaxed line-clamp-2">{post.excerpt}</p>
                 </div>
               </Link>
             ))}
@@ -310,7 +310,7 @@ export default function Home() {
       {/* FAQ Section */}
       <section className="py-32 px-8 md:px-16 bg-black border-t border-white/5">
         <div className="max-w-4xl mx-auto">
-          <span className="text-white/60 uppercase tracking-header text-[10px] font-black block mb-8 text-center uppercase">Preguntas Frecuentes</span>
+          <span className="text-white uppercase tracking-header text-[11px] font-black block mb-8 text-center uppercase">Preguntas Frecuentes</span>
           <h2 className="text-4xl md:text-6xl font-serif italic text-white mb-16 text-center leading-tight">Dudas sobre <br/><span className="text-white not-italic">Barbería en Murcia</span></h2>
           <div className="space-y-12">
             {FAQS.map((faq, i) => (
