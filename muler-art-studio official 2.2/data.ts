@@ -155,7 +155,7 @@ export const SERVICES = [
     price: '23.00',
     duration: '60 min',
     keywords: ['ritual completo murcia', 'barbería integral', 'estilo masculino murcia'],
-    image: '/images/corte-pelo-secas.webp'
+    image: '/images/pelo-barba-secas.webp'
   },
   {
     id: 'arreglo-barba',
