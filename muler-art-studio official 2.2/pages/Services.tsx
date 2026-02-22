@@ -41,7 +41,7 @@ export default function Services() {
       
       <div className="max-w-[1600px] mx-auto px-8 md:px-16">
         <div className="max-w-4xl mb-20">
-          <span className="text-white/60 uppercase tracking-header text-[10px] font-black block mb-8">Propuesta de Autor</span>
+          <span className="text-white uppercase tracking-header text-[11px] font-black block mb-8">Propuesta de Autor</span>
           <h1 className="text-6xl md:text-8xl font-serif mb-10 italic text-white leading-[0.9]">
             Servicios de <br />
             <span className="not-italic text-zinc-100">Barbería en Murcia</span>
@@ -106,7 +106,7 @@ export default function Services() {
                 </p>
                 
                 <div className="mt-auto flex justify-between items-center pt-5 border-t border-white/5">
-                  <span className="text-[9px] uppercase tracking-[0.4em] text-white/50 font-bold group-hover:text-white transition-colors">
+                  <span className="text-[10px] uppercase tracking-[0.4em] text-white font-bold group-hover:text-white transition-colors">
                     Ver Detalles
                   </span>
                   <div className="flex gap-2">
